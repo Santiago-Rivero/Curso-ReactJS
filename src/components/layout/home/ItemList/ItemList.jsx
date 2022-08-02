@@ -3,7 +3,6 @@ import Item from './Item'
 import './itemList.css'
 
 const ItemList = ({products}) => {
-    console.log('desde itemList', products)
   return (
     <div className='item-list-container'>
         {
