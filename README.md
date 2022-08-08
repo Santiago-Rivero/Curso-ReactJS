@@ -4,11 +4,11 @@
 
 ### Con hooks y react-router-dom
 
-### Dependendicas extra
-
-#### Material UI -
+### Dependencias extras : Material UI -
 
 ##### En esta ocación solo se uso para aplicar un Loader antes de cargar un producto en específico, pero próximamnte sera utilizado para darle mas dinamismo a la app
+
+## E-commerce deportivo
 
 Se trata de un e-commerce para una Tienda Deportiva Ficticia, con el fin de aplicar los conocimientos adquiridos durante el curso.
 
