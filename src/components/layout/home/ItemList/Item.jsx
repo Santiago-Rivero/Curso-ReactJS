@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom'
 import "./itemCount.css"
 
 const Item = ({item}) => {
-
-    const [itemsAdded, addItem] = useState(1);
     
   return (
     <section className='container'>
-        <h6>Nombre del producto: {item && item.title}</h6>
+        <h5>{item && item.title}</h5>
         <img src={item.pictureUrl} alt='image' style={{maxHeight: 120}}/>
-        
+        <br/>
         <span className='text-stock'>Stock: {item.stock}</span>
         <p>
             <button className="btn btn-select">

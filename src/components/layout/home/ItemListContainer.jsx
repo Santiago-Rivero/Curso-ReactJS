@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom';
+import LoaderCircular from "../../shared/LoaderCircular";
 import ItemList from "./ItemList/ItemList";
 
 const ItemListContainer = () =>{
     const [products, setProducts] = useState([]);
+    const [loader, setLoader] = useState(true)
     const { idCategory } = useParams();
 
     useEffect(() => {
@@ -23,7 +25,8 @@ const ItemListContainer = () =>{
                 }else{
                     res(arrayProducts.filter((product)=> product.categoria === idCategory));
                 }
-            },500)
+                setLoader(false)
+            },1000)
         })
 
         promiseProducts.then( res =>{
@@ -33,7 +36,7 @@ const ItemListContainer = () =>{
 
     return(
         <div>
-            <ItemList products={products}/>
+            {loader ? <LoaderCircular/> : <ItemList products={products}/>}
         </div>
         
     )

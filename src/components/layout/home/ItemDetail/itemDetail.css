@@ -1,0 +1,9 @@
+.item-container{
+    max-width: 370px; 
+    margin: 0 auto;
+}
+.item-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
