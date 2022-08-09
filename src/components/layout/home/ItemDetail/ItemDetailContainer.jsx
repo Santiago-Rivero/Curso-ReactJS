@@ -7,7 +7,6 @@ const ItemDetailContainer = () => {
     const [item, setItem] = useState({})
     const [loader, setLoader] = useState(true);
     const { idProduct } = useParams();
-    console.log('productId', idProduct);
 
     useEffect(()=>{
         let arrayProducts = [

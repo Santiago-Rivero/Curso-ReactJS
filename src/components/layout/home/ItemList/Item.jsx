@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import "./itemCount.css"
+import "./item.css"
 
 const Item = ({item}) => {
     
   return (
-    <section className='container'>
+    <section className='card-item'>
         <h5>{item && item.title}</h5>
         <img src={item.pictureUrl} alt='image' style={{maxHeight: 120}}/>
         <br/>

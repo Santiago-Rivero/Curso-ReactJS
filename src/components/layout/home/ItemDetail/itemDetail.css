@@ -1,9 +1,18 @@
 .item-container{
-    max-width: 370px; 
+    min-width: 500px;
+    max-width: 560px; 
     margin: 0 auto;
 }
 .item-content{
     display: flex;
-    align-items: center;
     justify-content: space-around;
+}
+.item-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.section-btn-add-cart{
+    display: flex;
+    justify-content: flex-end;
 }
