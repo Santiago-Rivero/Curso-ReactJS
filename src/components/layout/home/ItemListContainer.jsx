@@ -19,6 +19,7 @@ const ItemListContainer = () =>{
         ]
 
         const promiseProducts = new Promise((res, rej) =>{
+            setLoader(true)
             setTimeout(() =>{
                 if(!idCategory){
                     res (arrayProducts);
