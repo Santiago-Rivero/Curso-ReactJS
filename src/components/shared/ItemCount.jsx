@@ -1,20 +1,25 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { myContext } from "../CartContext";
 import "./itemCount.css"
 
-const ItemCount = ({initial, stock, count, setCount}) =>{
 
-    const [itemsAdded, addItem] = useState(1);
+const ItemCount = ({item, count, setCount, initial = 1}) =>{
+
+    const { addItem } = useContext(myContext);
+
+    const [itemsAdded, setAddItem] = useState(1);
 
     const setItem = (value) =>{
         if( value ){
-            itemsAdded < stock ? addItem(itemsAdded + 1): '';
+            itemsAdded < item.stock ? setAddItem(itemsAdded + 1): '';
         }else{
-            itemsAdded > initial ? addItem(itemsAdded - 1) : '';
+            itemsAdded > initial ? setAddItem(itemsAdded - 1) : '';
         }
     }
 
     const handleClick = () =>{
         setCount(itemsAdded);
+        addItem(item, itemsAdded);
     }
 
     return (

@@ -15,3 +15,15 @@
 a{
     text-decoration: none;
 }
+
+.span-notificacion{
+    display: block;
+    top: 11px;
+    position: absolute;
+    right: 80px;
+    background: #2B4865;
+    color: white;
+    height: 22px;
+    width: 22px;
+    border-radius: 50px;
+}

@@ -37,7 +37,7 @@ const ItemDetail = ({item}) => {
                     Precio: Usd {item?.price}
                 </span>
                 <section className='section-btn-add-cart'>
-                    {addToCart ? <ButtonEndBuy/> : <ItemCount initial={1} stock={item.stock} count={count} setCount={setCount}/>}
+                    {addToCart ? <ButtonEndBuy/> : <ItemCount initial={1} item={item} count={count} setCount={setCount}/>}
                 </section>
             </section>
             <section>
