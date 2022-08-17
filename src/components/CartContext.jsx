@@ -5,13 +5,14 @@ export const myContext = createContext();
 const CartContext = ({children}) => {
   const [products, setProducts] = useState([])
   const [lengthArray, setLength] = useState(0)
+  const [total, setTotal] = useState(0);
 
   const addItem = (item, quantity) => {
 
     if(isInCart(item.id) !== undefined ){
       let index;
       products.forEach( (prod, i) => {
-        if(prod.item.id === item.id) index = i;
+        if(prod.id === item.id) index = i;
       })
       products[index].quantity = quantity;
       setProducts(products);
@@ -41,7 +42,7 @@ const CartContext = ({children}) => {
 
   const isInCart = (id) => {
     if(products){
-      return products.find( prod => prod.id === id);
+      return products.find( prod => prod.id == id);
     }
   }
 
@@ -55,8 +56,17 @@ const CartContext = ({children}) => {
     }
   }
 
+  const getTotalPrice = () => {
+    let priceProducts = products.map(item => item.price * item.quantity);
+
+    let totalPrice = priceProducts.reduce((acc, el) => acc + el, 0)
+  
+    return `${(totalPrice).toFixed(2)}`;
+    
+  }
+
   return (
-    <myContext.Provider value={{ products, addItem, removeItem, clearCart, isInCart, lengthArray}}>{children}</myContext.Provider>
+    <myContext.Provider value={{ products, addItem, removeItem, clearCart, isInCart, getTotalPrice, lengthArray}}>{children}</myContext.Provider>
   )
 }
 

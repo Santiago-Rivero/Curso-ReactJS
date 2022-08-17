@@ -8,7 +8,7 @@ import './cart.css'
 
 const Cart = () => {
     const[loader, setLoader] = useState(true)
-    const {lengthArray, products} = useContext(myContext);
+    const {lengthArray, products, getTotalPrice} = useContext(myContext);
 
     useEffect( () =>{
         setTimeout(()=>{
@@ -49,16 +49,21 @@ const Cart = () => {
             <span>
                 Subtotal
             </span>
-        </section>
+          </section>
           {
             products.map((item, index) => 
               <CartItem key={index} item={item} setLoader={setLoader}/>
             )
           }
+          <hr></hr>
+          <section className='row-item'>
+            {products && <span>Total a pagar: ${getTotalPrice()}</span>}
+          </section>
           
         </section>
       )
     }
+
   return (
     <>
       {loader ? 
