@@ -16,14 +16,18 @@ a{
     text-decoration: none;
 }
 
+.cart-widget{
+    display: flex;
+    flex-direction: column;
+}
+
 .span-notificacion{
-    display: block;
-    top: 11px;
-    position: absolute;
-    right: 80px;
-    background: #2B4865;
-    color: white;
+    align-self: end;
+    margin-bottom: -10px;
     height: 22px;
     width: 22px;
-    border-radius: 50px;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: #2B4865;
+    color: white;
 }

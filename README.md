@@ -4,7 +4,7 @@
 
 ### Con hooks y react-router-dom
 
-### Dependencias extras : Material UI -
+### Dependencias extras : Material UI - Icons Material
 
 ##### En esta ocación solo se uso para aplicar un Loader antes de cargar un producto en específico, pero próximamnte sera utilizado para darle mas dinamismo a la app
 

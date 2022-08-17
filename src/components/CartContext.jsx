@@ -15,20 +15,24 @@ const CartContext = ({children}) => {
       })
       products[index].quantity = quantity;
       setProducts(products);
-      setLength(products.length);
-      console.log(products)
+      counterItems();
     }else{
       let obj = {id: item.id, name: item.title, price: item.price, quantity}
       products.push(obj)
       setProducts(products);
-      setLength(products.length);
-      console.log(products)
+      counterItems();
     }
     
   }
 
   const removeItem = (itemId) => {
-    console.log('remover items')
+    let newProducts = products.filter( item => item.id !== itemId);
+    if( newProducts.length != 0){
+      setProducts(newProducts);
+    }else{
+      setProducts([]);
+      setLength(0);
+    }
   }
 
   const clearCart = () => {
@@ -41,9 +45,18 @@ const CartContext = ({children}) => {
     }
   }
 
+  const counterItems = () => {
+    if(products.length != 0){
+      let arrayQuantity =  products.map(item => item.quantity);
+      let totalItems = arrayQuantity.reduce((acc,el) => acc + el, 0)
+      setLength(totalItems);
+    }else{
+      setLength(0);
+    }
+  }
 
   return (
-    <myContext.Provider value={{ addItem, removeItem, clearCart, isInCart, lengthArray}}>{children}</myContext.Provider>
+    <myContext.Provider value={{ products, addItem, removeItem, clearCart, isInCart, lengthArray}}>{children}</myContext.Provider>
   )
 }
 

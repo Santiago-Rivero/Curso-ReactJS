@@ -13,7 +13,7 @@ const Navbar = () => {
             <li><Link to={'category/futbol'}>Futbol</Link></li>
             <li><Link to={'category/gimnasio'}>Gimnasio</Link></li>
             <li>Nosotros</li>
-            <li><CartWidget/></li>
+            <li><Link to={'cart'}><CartWidget/></Link></li>
         </ul>
         
     )
