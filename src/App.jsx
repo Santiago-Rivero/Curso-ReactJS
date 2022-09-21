@@ -1,44 +1,25 @@
-import { useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
+import { Routes, Route} from 'react-router-dom'
+import Navbar from './components/layout/header/Navbar'
+
+import ItemListContainer from './components/layout/home/ItemListContainer'
+import ItemDetailContainer from './components/layout/home/ItemDetail/ItemDetailContainer'
+import Cart from './components/layout/cart/Cart'
+import CartContext from './components/CartContext'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>Clase 01 - Creacion de app con Vite</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <CartContext>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<ItemListContainer />}/>
+          <Route path="/category/:idCategory" element={<ItemListContainer />}/>
+          <Route path="/product/:idProduct" element={<ItemDetailContainer />}/>
+          <Route path='/cart' element={<Cart/>}/>
+        </Routes>
+      </CartContext>
     </div>
   )
 }

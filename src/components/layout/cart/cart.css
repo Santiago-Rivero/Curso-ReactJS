@@ -1,0 +1,43 @@
+.cart-container{
+    border: 1px solid gray;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 10px 0px;
+}
+
+.msg-no-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+.cart-item{
+    
+}
+.row-item{
+    display: grid;
+    grid-template-columns: repeat(5, 170px);
+    justify-items: start;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.row-pagar{
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-container{
+    display: grid;
+    justify-content: center;
+}
+
+.label-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.row-form p {
+    margin: 0px 0px 5px;
+}

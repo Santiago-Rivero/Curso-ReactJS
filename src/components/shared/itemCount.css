@@ -1,0 +1,29 @@
+.container{
+    width: 125px;
+    padding: 5px;
+    border: 1px solid #E2DCC8;
+    border-radius: 3px;
+}
+.controls{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn-select{
+    width: 120px;
+    padding: 3px 0px;
+    font-size: 14px;
+    color: #0F3D3E;
+    border: 1px solid #0F3D3E;
+    border-radius: 3px;
+}
+
+.text-stock{
+    color: red;
+}
